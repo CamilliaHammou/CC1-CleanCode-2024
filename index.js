@@ -1,4 +1,4 @@
-function getBrelan(dice) {
+function getThreeOfAKind(dice) {
 
     const counts = {};
 
@@ -14,4 +14,19 @@ function getBrelan(dice) {
     return 0;
   }
 
-module.exports = { getBrelan };
+function getFourOfAKind(dice) {
+    
+    const counts = {};
+  
+    for (const die of dice) {
+        counts[die] = (counts[die] || 0) + 1;
+    }
+    for (const key in counts) {
+      if (counts[key] >= 4) {
+        return 35;
+      }
+    }
+    return 0;
+  }
+  
+module.exports = { getThreeOfAKind, getFourOfAKind };
