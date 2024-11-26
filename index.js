@@ -21,7 +21,7 @@ function getThreeOfAKind(dice) {
 function getFourOfAKind(dice) {
 
     const counts = countDice(dice);
-    
+
     for (const key in counts) {
         if (counts[key] >= 4) {
             return 35;
@@ -32,11 +32,9 @@ function getFourOfAKind(dice) {
 
 
 function getFull(dice) {
-    const counts = {};
-  
-    for (const die of dice) {
-        counts[die] = (counts[die] || 0) + 1;
-    }
+
+    const counts = countDice(dice);
+
     if (Object.keys(counts).length === 2) {
         return 30;
     }
