@@ -1,5 +1,7 @@
 function countDice(dice) {
+
     const counts = {};
+    
     for (const die of dice) {
         counts[die] = (counts[die] || 0) + 1;
     }
@@ -51,4 +53,14 @@ function getBigSuite(dice) {
     return 40;
 }
 
-module.exports = { getThreeOfAKind, getFourOfAKind, getFull, getBigSuite};
+function getYams(dice) {
+
+    const counts = countDice(dice);
+
+    if (Object.values(counts).includes(5)) {
+        return 50;
+    }
+    return 0;
+}
+
+module.exports = { getThreeOfAKind, getFourOfAKind, getFull, getBigSuite, getYams};
