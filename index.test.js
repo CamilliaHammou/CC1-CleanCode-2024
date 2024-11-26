@@ -13,7 +13,7 @@ describe('Yams', () => {
     { fn: getYams, input: [6, 6, 6, 6, 6], output: 50 },
     { fn: getYams, input: [6, 6, 6, 6, 5], output: 0 },
     { fn: getChance, input: [1, 2, 3, 4, 5], output: 15 },
-
+    
     ])('should return $output when given $input', ({ fn, input, output }) => {
     expect(fn(input)).toBe(output);
     });
