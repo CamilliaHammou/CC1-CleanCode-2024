@@ -7,7 +7,7 @@ function countDice(dice) {
     }
     return counts;
 }
-function getThreeOfAKind(dice) {
+function getBrelan(dice) {
 
     const counts = countDice(dice);
 
@@ -19,7 +19,7 @@ function getThreeOfAKind(dice) {
     return 0;
 }
 
-function getFourOfAKind(dice) {
+function getCarre(dice) {
 
     const counts = countDice(dice);
 
@@ -67,5 +67,4 @@ function getChance(dice) {
     return dice.reduce((sum, die) => sum + die, 0);
 }
 
-
-module.exports = { getThreeOfAKind, getFourOfAKind, getFull, getBigSuite, getYams, getChance};
+module.exports = { getBrelan , getCarre, getFull, getBigSuite, getYams, getChance};

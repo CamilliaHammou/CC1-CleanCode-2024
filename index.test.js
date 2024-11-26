@@ -1,11 +1,11 @@
-const { getThreeOfAKind, getFourOfAKind, getFull, getBigSuite, getYams, getChance} = require('./index');
+const { getBrelan, getCarre, getFull, getBigSuite, getYams, getChance} = require('./index');
 
 describe('Yams', () => {
   it.each([
-    { fn: getThreeOfAKind, input: [2, 2, 2, 4, 5], output: 28 },
-    { fn: getThreeOfAKind, input: [1, 2, 3, 4, 5], output: 0 },
-    { fn: getFourOfAKind, input: [3, 3, 3, 3, 5], output: 35 },
-    { fn: getFourOfAKind, input: [3, 2, 3, 3, 5], output: 0 },
+    { fn: getBrelan, input: [2, 2, 2, 4, 5], output: 28 },
+    { fn: getBrelan, input: [1, 2, 3, 4, 5], output: 0 },
+    { fn: getCarre, input: [3, 3, 3, 3, 5], output: 35 },
+    { fn: getCarre, input: [3, 2, 3, 3, 5], output: 0 },
     { fn: getFull, input: [2, 2, 2, 5, 5], output: 30 },
     { fn: getFull, input: [2, 2, 2, 5, 4], output: 0 },
     { fn: getBigSuite, input: [1, 2, 3, 4, 5], output: 40 },
