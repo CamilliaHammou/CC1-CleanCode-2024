@@ -1,7 +1,7 @@
 function countDice(dice) {
 
     const counts = {};
-    
+
     for (const die of dice) {
         counts[die] = (counts[die] || 0) + 1;
     }
@@ -63,4 +63,9 @@ function getYams(dice) {
     return 0;
 }
 
-module.exports = { getThreeOfAKind, getFourOfAKind, getFull, getBigSuite, getYams};
+function getChance(dice) {
+    return dice.reduce((sum, die) => sum + die, 0);
+}
+
+
+module.exports = { getThreeOfAKind, getFourOfAKind, getFull, getBigSuite, getYams, getChance};
