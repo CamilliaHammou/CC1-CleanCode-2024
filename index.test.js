@@ -1,17 +1,12 @@
-const { getThreeOfAKind, getFourOfAKind } = require('./index');
+const { getThreeOfAKind, getFourOfAKind, getFull } = require('./index');
 
 describe('Yams', () => {
-  test('ThreeOfAKind', () => {
-    const result = getThreeOfAKind([2, 2, 2, 4, 5]);
-    expect(result).toBe(28);
+  it.each([
+    { fn: getThreeOfAKind, input: [2, 2, 2, 4, 5], output: 28 },
+    { fn: getThreeOfAKind, input: [1, 2, 3, 4, 5], output: 0 },
+    { fn: getFourOfAKind, input: [3, 3, 3, 3, 5], output: 35 },
+    { fn: getFull, input: [2, 2, 2, 5, 5], output: 30 },
+  ])('should return $output when given $input', ({ fn, input, output }) => {
+    expect(fn(input)).toBe(output);
   });
-  test('No ThreeOfAKind', () => {
-    const result = getThreeOfAKind([1, 2, 3, 4, 5]);
-    expect(result).toBe(0);
-  });
-  test('Four-of-a-Kind', () => {
-    const result = getFourOfAKind([3, 3, 3, 3, 5]);
-    expect(result).toBe(35);
-  });
-  
 });

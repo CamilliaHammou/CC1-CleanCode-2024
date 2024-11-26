@@ -5,14 +5,13 @@ function getThreeOfAKind(dice) {
     for (const die of dice) {
       counts[die] = (counts[die] || 0) + 1;
     }
-
     for (const key in counts) {
       if (counts[key] >= 3) {
         return 28;
       }
     }
     return 0;
-  }
+}
 
 function getFourOfAKind(dice) {
     
@@ -27,6 +26,18 @@ function getFourOfAKind(dice) {
       }
     }
     return 0;
-  }
+}
+
+function getFull(dice) {
+    const counts = {};
   
-module.exports = { getThreeOfAKind, getFourOfAKind };
+    for (const die of dice) {
+        counts[die] = (counts[die] || 0) + 1;
+    }
+    if (Object.keys(counts).length === 2) {
+        return 30;
+    }
+    return 0;
+}
+
+module.exports = { getThreeOfAKind, getFourOfAKind, getFull };
