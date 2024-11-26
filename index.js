@@ -1,4 +1,3 @@
-
 function countDice(dice) {
     const counts = {};
     for (const die of dice) {
@@ -30,7 +29,6 @@ function getFourOfAKind(dice) {
     return 0;
 }
 
-
 function getFull(dice) {
 
     const counts = countDice(dice);
@@ -41,4 +39,16 @@ function getFull(dice) {
     return 0;
 }
 
-module.exports = { getThreeOfAKind, getFourOfAKind, getFull };
+function getBigSuite(dice) {
+
+    const sortedDice = dice.sort((a, b) => a - b);
+
+    for (let i = 1; i < sortedDice.length; i++) {
+        if (sortedDice[i] !== sortedDice[i - 1] + 1) {
+            return 0;
+        }
+    }
+    return 40;
+}
+
+module.exports = { getThreeOfAKind, getFourOfAKind, getFull, getBigSuite};
