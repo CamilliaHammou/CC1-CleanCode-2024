@@ -1,14 +1,19 @@
+
+function countDice(dice) {
+    const counts = {};
+    for (const die of dice) {
+        counts[die] = (counts[die] || 0) + 1;
+    }
+    return counts;
+}
 function getThreeOfAKind(dice) {
 
-    const counts = {};
-
-    for (const die of dice) {
-      counts[die] = (counts[die] || 0) + 1;
-    }
+    const counts = countDice(dice);
+    
     for (const key in counts) {
-      if (counts[key] >= 3) {
-        return 28;
-      }
+        if (counts[key] >= 3) {
+            return 28;
+        }
     }
     return 0;
 }
